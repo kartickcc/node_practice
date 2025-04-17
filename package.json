@@ -10,8 +10,12 @@
   "author": "kartick das",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "helmet": "^8.1.0",
     "mongoose": "^8.13.2",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "xss-clean": "^0.1.4"
   }
 }

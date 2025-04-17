@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# dotenv environment variable file
+.env
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional OS-specific
+.DS_Store
+
+# Optional if you're on Windows
+Thumbs.db
+
+# Optional if using VS Code
+.vscode/

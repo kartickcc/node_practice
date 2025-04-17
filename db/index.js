@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const connectWithRetry = async (retries=5,delay=5000) => {
     while(retries){
         try{
-            await mongoose.connect("mongodb+srv://kartick:UgrUAN564IBpw0Fp@cluster0.3c8y9.mongodb.net/",{
+            await mongoose.connect(process.env.MONGODB_URI,{
                 serverSelectionTimeoutMS: 5000, // Time to wait for connection
                 socketTimeoutMS: 45000,         // Time for inactivity
                 maxPoolSize: 10,                // Max number of connections in pool
@@ -46,7 +46,7 @@ const connectWithRetry = async (retries=5,delay=5000) => {
 
 module.exports = connectWithRetry
 
-// ✅ Connection pooling
+// ✅ Connection pooling (Reusing a pool (collection) of open database connections instead of opening and closing one for every request.)
 // ✅ Retry logic
 // ✅ Event listeners
 // ✅ Centralized error handling
