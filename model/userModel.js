@@ -12,8 +12,12 @@ const userSchema = new mongoose.Schema({
     trim : true,
     unique: true,
     match: [/.+\@.+\..+/, 'Please fill a valid email address'],
+   },
+   isDeleted : {
+      type : Boolean,
+      default : 0
    }
-})
-
+},{timestamps:true})
+userSchema.index({name:'text',email:'text'})
 const user = mongoose.model('UserModel',userSchema)
 module.exports = user
